@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sentimentja_js</title>
+    <style>
+        *,*::before,*::after{
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>sentimentja_js</h1>
+    <p id="loading"></p>
+    <form action="" method="post">
+        <textarea name="text" id="text" rows="7" cols="40"></textarea>
+        <input type="button" id="analyze_btn" value="分析">
+    </form>
+    <div id="result">
+    </div>
+
+    <!-- Loading ONNX Web Runtime -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script type="module" src="./senti_onnx_test.js"></script>
+    <script>
+        document.getElementById("loading").textContent = "色々読み込み中です。。。";
+        window.addEventListener("load", () => {
+            document.getElementById("loading").textContent = "";
+        });
+
+    </script>
+</body>
+</html>
