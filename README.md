@@ -16,7 +16,7 @@ Code → Download ZIP → 展開
 
 どちらかを実行して、コード一式を配置してください。
 
-使用する際には、必ず**onnxruntime-web**を事前に読み込ませてください。
+使用する際には、必ず[**onnxruntime-web**](https://github.com/microsoft/onnxruntime/tree/master/js#onnxruntime-web)を事前に読み込ませてください。
 
 またURLが「file://～」では正常に動作しません。
 
@@ -49,7 +49,7 @@ usage.html
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
-        <script src="./usage.js"></script>
+        <script type="module" src="./usage.js"></script>
     </body>
     </html>
 ```
