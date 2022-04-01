@@ -20,12 +20,14 @@ async function show_results(list_text) {
             compatible_result[r].emotions[v] = Number(Math.floor(result[r].emotions[v] + "e8")+"e-8");
         }
         );});
-    document.getElementById("result").innerText = JSON.stringify(compatible_result, null, 2);
+    return JSON.stringify(compatible_result, null, 2);
 }
 
 document.getElementById("analyze_btn").addEventListener("click", async () => {
     const text = document.getElementById("text").value;
-    await show_results(text.split("\n"));
+    const result = await show_results(text.split("\n"));
+    document.getElementById("result").innerHTML = result;
 });
 
 document.getElementById("text").value= list_text.join("\n");
+document.getElementById("loading").textContent = "";

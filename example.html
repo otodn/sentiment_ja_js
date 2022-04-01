@@ -21,15 +21,11 @@
     <div id="result">
     </div>
 
+    <script>
+        document.getElementById("loading").textContent = "色々読み込み中です。。。";
+    </script>
     <!-- Loading ONNX Web Runtime -->
     <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
     <script type="module" src="./senti_onnx_test.js"></script>
-    <script>
-        document.getElementById("loading").textContent = "色々読み込み中です。。。";
-        window.addEventListener("load", () => {
-            document.getElementById("loading").textContent = "";
-        });
-
-    </script>
 </body>
 </html>
